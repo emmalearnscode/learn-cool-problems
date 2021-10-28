@@ -4,12 +4,14 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 3rem;
+	
 }
 
 .run {
 	background-color: var(--purple3);
 	border-radius: 99px;
-	color: var(--white1);
+	border: none;
+	color: var(--white);
 	display: flex;
 	justify-content: center;
 	align-items: center;

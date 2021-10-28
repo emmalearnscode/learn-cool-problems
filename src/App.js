@@ -64,38 +64,42 @@ function App() {
 	// console.log(JSON.stringify(results, null, 2))
 
 	return (
-		<div className="App">
-			<div>
-				{!isRunning && <div className="run fw5 fs4" onClick={run}>RUN</div>}
-				<div className="group">
-					<div className="header fw5 fs7">Easy</div>
-					<div>
-						{Object.entries(easy).map(([name, tests]) => {
-							return <Task key={name} name={name} tests={tests} />
-						})}
-					</div>
-				</div>
+    <main className="App">
+      <div>
+        {!isRunning && (
+          <button className="run fw5 fs4" onClick={run}>
+            RUN
+          </button>
+        )}
+        <div className="group">
+          <div className="header fw5 fs7">Easy</div>
+          <div>
+            {Object.entries(easy).map(([name, tests]) => {
+              return <Task key={name} name={name} tests={tests} />
+            })}
+          </div>
+        </div>
 
-				<div className="group">
-					<div className="header fw5 fs7">Medium</div>
-					<div>
-						{Object.entries(medium).map(([name, tests]) => {
-							return <Task key={name} name={name} tests={tests} />
-						})}
-					</div>
-				</div>
+        <div className="group">
+          <div className="header fw5 fs7">Medium</div>
+          <div>
+            {Object.entries(medium).map(([name, tests]) => {
+              return <Task key={name} name={name} tests={tests} />
+            })}
+          </div>
+        </div>
 
-				<div className="group">
-					<div className="header fw5 fs7">Hard</div>
-					<div>
-						{Object.entries(hard).map(([name, tests]) => {
-							return <Task key={name} name={name} tests={tests} />
-						})}
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+        <div className="group">
+          <div className="header fw5 fs7">Hard</div>
+          <div>
+            {Object.entries(hard).map(([name, tests]) => {
+              return <Task key={name} name={name} tests={tests} />
+            })}
+          </div>
+        </div>
+      </div>
+    </main>
+  )
 }
 
 function Task({name, tests}) {
