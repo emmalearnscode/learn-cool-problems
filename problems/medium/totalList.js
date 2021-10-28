@@ -1,8 +1,8 @@
 
 // Write a function that computes the running total of a list.
 export const totalList = (xs) => {
-	// Your code here...
-	return -1
+	const total = xs.reduce((a, b) => a + b, 0)
+  return total
 }
 
 const tests = [
