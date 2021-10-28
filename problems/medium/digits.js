@@ -2,10 +2,19 @@
 // Write a function that takes a number and returns a list of its digits.
 // So for 2342 it should print [2,3,4,2].
 
-export const digits = (n) => {
-	// Your code here...
-	return []
+export const digits = n => {
+  const numArr = []
+  let num = Math.abs(n)
+  while (num > 0) {
+    let remainder = num % 10
+    numArr.unshift(remainder)
+    num = Math.floor(num / 10)
+  }
+
+  return numArr
 }
+
+
 
 const tests = [
 	[digits, [2342], [2,3,4,2]],
