@@ -23,4 +23,6 @@ jobs:
       - name: run Lighthouse CI
         run: |
           npm install -g @lhci/cli@0.8.x
-          lhci autorun
+          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed"
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{secrets.LIGHTHOUSE_APP_SECRET}}
